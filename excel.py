@@ -1,9 +1,8 @@
-import sys
 from openpyxl import load_workbook
 
 def main():
   # excel file load
-  excel_path='/Users/taharayoshinobu/Documents/ProgramingStudy/python_excel/table2.xlsx'
+  excel_path='your file name'
   wb = load_workbook(filename=excel_path, read_only=True)
 
   f = open("insert.txt", "w")
@@ -27,7 +26,7 @@ def main():
 
 def create_query(ws):
 
-  query = "insert into" + ws.cell(column=1, row=1).value + " ("
+  query = "insert into " + ws.cell(column=1, row=1).value + " ("
 
   for col in range(ws.min_column, ws.max_column + 1):
     query = query + ws.cell(column=col, row=2).value
